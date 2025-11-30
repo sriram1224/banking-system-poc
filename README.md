@@ -170,7 +170,7 @@ Access the app:
 
 # 🧪 cURL Testing Examples
 
-### 🔹 Top-up Transaction (Recommended Test)
+### 🔹 Top-up Transaction
 
 ```bash
 curl -X POST http://localhost:8081/transaction \
@@ -181,7 +181,11 @@ curl -X POST http://localhost:8081/transaction \
     "amount": 500,
     "type": "topup"
   }'
+
+
 ```
+
+![alt text](image-5.png)
 
 ### 🔹 Withdraw Transaction
 
@@ -194,7 +198,10 @@ curl -X POST http://localhost:8081/transaction \
     "amount": 200,
     "type": "withdraw"
   }'
+
 ```
+
+![alt text](image-4.png)
 
 ### 🔹 Invalid PIN Example
 
@@ -209,6 +216,8 @@ curl -X POST http://localhost:8081/transaction \
   }'
 ```
 
+![alt text](image-6.png)
+
 ### 🔹 Fetch Balance
 
 ```bash
@@ -221,13 +230,15 @@ curl "http://localhost:8082/balance?cardNumber=4123456789012345"
 curl "http://localhost:8082/transactions?cardNumber=4123456789012345"
 ```
 
+![alt text](image-7.png)
+
 ### 🔹 Admin — All Transactions
 
 ```bash
 curl "http://localhost:8082/transactions/all"
 ```
 
----
+## ![alt text](image-8.png)
 
 # 🗄️ H2 Database Console
 
@@ -238,8 +249,6 @@ http://localhost:8082/h2-console
 ```
 
 ---
-
-# 🖼️ Screenshots
 
 ### Customer Dashboard
 
@@ -262,5 +271,5 @@ _Monitor all system transactions in real-time._
 
 # 👨‍💻 Author
 
-**Kasukurthi Bhargav Sri Ram**
+**Kasukurthi Bhargav Sri Ram** -
 Java Full Stack Developer
