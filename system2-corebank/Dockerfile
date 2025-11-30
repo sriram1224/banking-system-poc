@@ -1,34 +1,24 @@
-# Use a two-stage build to create a smaller final image
-# Stage 1: Build the application
-FROM maven:3.8.5-openjdk-17 AS builder
+# Use an official OpenJDK runtime as a parent image
+FROM maven:3.8.5-openjdk-17
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the Maven wrapper and pom.xml
-COPY .mvn/ .mvn
-COPY mvnw pom.xml ./
+# Copy the Maven project file
+COPY pom.xml .
 
-# Download dependencies
-RUN ./mvnw dependency:go-offline
+# Download and cache dependencies
+RUN mvn dependency:go-offline
 
-# Copy the rest of the source code
+# Copy the rest of the application's source code
 COPY src ./src
 
 # Build the application
-RUN ./mvnw package -DskipTests
+RUN mvn package -DskipTests
 
-# Stage 2: Create the final image
-FROM openjdk:17-slim
-
-# Set the working directory
-WORKDIR /app
-
-# Copy the JAR from the builder stage
-COPY --from=builder /app/target/*.jar app.jar
-
-# Expose the application port
+# Expose the port the app runs on
 EXPOSE 8080
+
 
 # Run the application
 ENTRYPOINT ["java", "-jar", "app.jar"]
