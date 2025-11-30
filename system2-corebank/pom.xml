@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.0</version>
+        <version>3.2.5</version> <!-- Or any other recent stable version -->
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.bank.poc</groupId>
@@ -76,6 +76,7 @@
     </dependencies>
 
     <build>
+        <finalName>SYSTEM 2</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
