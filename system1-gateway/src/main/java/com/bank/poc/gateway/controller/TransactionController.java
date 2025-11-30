@@ -41,7 +41,7 @@ public class TransactionController {
         }
 
         // 5. Forward to System 2 (CoreBank)
-        String url = "http://localhost:8082/process";
+        String url = "https://system2-corebank.onrender.com/process";
 
         return restTemplate.postForObject(url, req, Object.class);
     }

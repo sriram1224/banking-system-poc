@@ -1,5 +1,5 @@
 import axios from "axios";
 
 export const apiCore = axios.create({
-  baseURL: "http://localhost:8082",
+  baseURL: "https://system2-corebank.onrender.com",
 });
