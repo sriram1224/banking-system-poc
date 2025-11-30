@@ -21,4 +21,4 @@ EXPOSE 8080
 
 
 # Run the application
-ENTRYPOINT ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "target/SYSTEM 2.jar"]
